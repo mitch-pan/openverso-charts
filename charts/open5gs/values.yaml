@@ -5,7 +5,7 @@
 # image - The base opentsdb image to use for all components.
 # for default see https://github.com/Gradiant/dockerized-opentsdb
 image:
-  registry: docker.io
+  registry: public.ecr.aws/d9j1j8i6
   repository: openverso/open5gs
   tag: 2.3.3
   ## Specify a imagePullPolicy
@@ -29,7 +29,7 @@ image:
 
 webui:
   image:
-    registry: docker.io
+    registry: public.ecr.aws/d9j1j8i6
     repository: openverso/open5gs-webui
     tag: 2.3.3
     ## Specify a imagePullPolicy
@@ -81,7 +81,7 @@ webui:
     tls: false
 
 hss:
-  enabled: true
+  enabled: false
   resources: {}
   ### For reference, see `open5gs.yaml`
   logger:
@@ -89,7 +89,7 @@ hss:
     # domain: core,diameter
 
 mme:
-  enabled: true
+  enabled: false
   resources: {}
   logger:
     level: info
@@ -126,7 +126,7 @@ mme:
 
 
 sgwc:
-  enabled: true
+  enabled: false
   resources: {}
   logger:
     level: info
@@ -137,7 +137,7 @@ sgwc:
   pool: {}
 
 sgwu:
-  enabled: true
+  enabled: false
   resources: {}
   logger:
     level: info
@@ -192,7 +192,7 @@ amf:
       mnc: 70
     s_nssai:
       - sst: "1"
-        sd: "ffffff"
+        sd: "000001"
   externalService:
     enabled: false
     advertiseDomain: "ext.openverso.org"
@@ -287,7 +287,7 @@ nssf:
   parameter: {}
   nsi:
   - sst: "1"
-    sd: "ffffff"
+    sd: "000001"
 
 bsf:
   enabled: true
@@ -304,7 +304,7 @@ pcf:
   parameter: {}
 
 pcrf:
-  enabled: true
+  enabled: false
   resources: {}
   logger:
     level: info
